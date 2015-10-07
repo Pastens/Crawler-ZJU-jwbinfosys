@@ -15,9 +15,12 @@
 			
 			$cookie = getcookie();
 			$code = verifycode($cookie);
-			
 			if(!$code&&!$cookie){
-				verify($post_data,$cookie);
+				if(!verify($post_data,$cookie)){
+					echo json_encode('Account Error');
+				}else{
+					echo json_encode('Login Success');
+				}
 			}else{
 				echo json_decode('Initialization Failure');
 			}

@@ -33,7 +33,7 @@
 	//Determine the verify-pic
 	function code($pic){
 		header("Content-Type: text/html");
-		include("../plugin/Valite.php");
+		include("./plugin/Valite.php");
 		$valite = new Valite();
 		$valite->setImage($pic);
 		$valite->getHec();
